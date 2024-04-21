@@ -1,8 +1,0 @@
-{
-    "server": "grocery-store-29455337.database.windows.net",
-    "port": 1433,
-    "user": "grocery-store",
-    "password": "questionpro@0295",
-    "jwtKey": "ruturaj",
-    "database": "grocery-store"
-}
