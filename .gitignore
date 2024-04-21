@@ -1,0 +1,5 @@
+# Ignore Node Modules
+node_modules/
+
+# Ignore configuration file. An encrypted file uploaded
+src/config.json

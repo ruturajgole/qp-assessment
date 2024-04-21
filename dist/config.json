@@ -1,0 +1,7 @@
+{
+    "server": "localhost",
+    "port": 60354,
+    "user": "grocery_store",
+    "password": "1234",
+    "jwtKey": "ruturaj"
+}
