@@ -45,7 +45,7 @@ router.post("/api/grocery/add", async (req: Request, res: Response) => {
   }
 });
 
-router.post("api/grocery/remove", async (req: Request, res: Response) => {
+router.post("/api/grocery/remove", async (req: Request, res: Response) => {
   const { id } = req.body;
   const token = req.headers["authorization"];
 
@@ -66,7 +66,7 @@ router.post("api/grocery/remove", async (req: Request, res: Response) => {
   }
 });
 
-router.post("api/grocery/update", async (req: Request, res: Response) => {
+router.post("/api/grocery/update", async (req: Request, res: Response) => {
   const { id, name=null, price=null, stock=null } = req.body;
 
   try {

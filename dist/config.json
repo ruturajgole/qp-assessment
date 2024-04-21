@@ -1,7 +1,8 @@
 {
-    "server": "localhost",
-    "port": 60354,
-    "user": "grocery_store",
-    "password": "1234",
-    "jwtKey": "ruturaj"
+    "server": "grocery-store-29455337.database.windows.net",
+    "port": 1433,
+    "user": "grocery-store",
+    "password": "questionpro@0295",
+    "jwtKey": "ruturaj",
+    "database": "grocery-store"
 }

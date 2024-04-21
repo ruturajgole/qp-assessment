@@ -37,7 +37,7 @@ export const verifyJWT = (res: Response, token?: string, requiresAdmin: boolean 
 
 const router: express.Router = express.Router();
 
-router.post("api/auth/register", async (req: Request, res: Response) => {
+router.post("/api/auth/register", async (req: Request, res: Response) => {
   const { username, name, password, type } = req.body;
 
   try {
@@ -63,7 +63,7 @@ router.get("/api/auth/login", async (req: Request, res: Response) => {
     const request = connection.request();
     Object.entries({ username, password }).forEach((param) => request.input(param[0], param[1]));
     const result = await request.execute("Login");
-    
+    console.log(result);
     await connection.close();
     if(result.recordset.length){
       const user = result.recordset[0];
@@ -77,6 +77,7 @@ router.get("/api/auth/login", async (req: Request, res: Response) => {
     }
     res.status(401).json({ message: "Login Failed. Please check your credentials and try again." })
   } catch(error) {
+    console.log(error);
     res.status(500).json({ message: "Internal Server Error" });
   }
 });

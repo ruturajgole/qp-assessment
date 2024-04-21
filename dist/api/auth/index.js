@@ -49,7 +49,7 @@ const verifyJWT = (res, token, requiresAdmin = false) => {
 };
 exports.verifyJWT = verifyJWT;
 const router = express_1.default.Router();
-router.post("api/auth/register", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+router.post("/api/auth/register", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { username, name, password, type } = req.body;
     try {
         const connection = yield (0, src_1.default)();
@@ -70,6 +70,7 @@ router.get("/api/auth/login", (req, res) => __awaiter(void 0, void 0, void 0, fu
         const request = connection.request();
         Object.entries({ username, password }).forEach((param) => request.input(param[0], param[1]));
         const result = yield request.execute("Login");
+        console.log(result);
         yield connection.close();
         if (result.recordset.length) {
             const user = result.recordset[0];
@@ -80,6 +81,7 @@ router.get("/api/auth/login", (req, res) => __awaiter(void 0, void 0, void 0, fu
         res.status(401).json({ message: "Login Failed. Please check your credentials and try again." });
     }
     catch (error) {
+        console.log(error);
         res.status(500).json({ message: "Internal Server Error" });
     }
 }));
