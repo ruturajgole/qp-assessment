@@ -3,12 +3,19 @@
     "target": "es6",
     "module": "commonjs",
     "outDir": "./dist",
+    "moduleResolution": "node",
     "rootDir": "./src",
     "strict": true,
     "baseUrl": ".",
+    "paths": {
+      "*": ["*"]
+    },
     "esModuleInterop": true,
     "skipLibCheck": true,
     "resolveJsonModule": true
+  },
+  "node": {
+    "require": ["tsconfig-paths/register"]
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
